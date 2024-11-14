@@ -1,0 +1,71 @@
+<div id="myCarousel" class="carousel slide mb-6 carousel-container" data-bs-ride="carousel" style="margin-top: 100px;">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets/images/fondos/1980x1080/issvanguard.jpg" class="d-block w-100" alt="ISS Vanguard">
+      <div class="container">
+        <div class="carousel-caption text-start">
+
+          <p><a class="btn btn-lg btn-primary" href="#">Ver Detalles</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="assets/images/fondos/1980x1080/nemesislockdown.jpg" class="d-block w-100" alt="Nemesis Lockdown">
+      <div class="container">
+        <div class="carousel-caption">
+
+          <p><a class="btn btn-lg btn-primary" href="#">Saber mas</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="assets/images/fondos/1980x1080/sonsoffaeriell.jpg" class="d-block w-100" alt="Sons of Faeriell">
+      <div class="container">
+        <div class="carousel-caption text-end">
+
+          <p><a class="btn btn-lg btn-primary" href="#">Ver Detalles</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="assets/images/fondos/1980x1080/tamashii.jpg" class="d-block w-100" alt="Tamashii">
+      <div class="container">
+        <div class="carousel-caption text-end">
+
+          <p><a class="btn btn-lg btn-primary" href="#">Saber mas</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<div  class="titulo-promociones-container">
+  <h2 class="titulo-promociones">Promociones</h2>
+</div>
+<div class="container">
+    <div class="listaProductos">
+      <div class="item" *ngFor="let product of products">
+        <img [src]="product.image" alt="{{ product.nombre }}">
+        <h2>{{ product.nombre }}</h2>
+        <div class="precio">${{ product.precio }}</div>
+        <div>
+          <button (click)="addToCart(product)">Agregar</button>
+        </div>
+      </div>
+    </div>
+</div>

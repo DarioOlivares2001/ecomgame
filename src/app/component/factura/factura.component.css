@@ -1,0 +1,16 @@
+.container {
+
+  margin-bottom: 200px;
+}
+
+.table {
+  margin-top: 50px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-success {
+  color: green;
+}

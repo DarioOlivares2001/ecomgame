@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "username": "admin",
+    "email": "admin@gmail.com",
+    "password": "123456",
+    "birthdate": "1990-01-01",
+    "address": "Address 1"
+  },
+  {
+    "id": 2,
+    "username": "dario",
+    "email": "dario@gmail.com",
+    "password": "123456",
+    "birthdate": "1992-02-02",
+    "address": "Address 2"
+  }
+]

@@ -1,0 +1,48 @@
+.listarCarro .cantidad .menos, .listarCarro .cantidad .mas {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  color: #555;
+  cursor: pointer;
+  text-align: center;
+  line-height: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+  border: 2px solid #555;
+}
+
+
+.listarCarro .cantidad .menos:hover, .listarCarro .cantidad .mas:hover {
+  background-color:  #ffc107;
+  color: #ffffff;
+}
+
+.total {
+  color: white;
+  text-align: right;
+  transition: transform 0.3s ease;
+}
+
+.btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.total-update {
+  animation: jump 0.3s forwards;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

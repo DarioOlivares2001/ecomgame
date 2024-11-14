@@ -1,0 +1,12 @@
+<div class="container d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+  <div class="listaProductos">
+    <div class="item" *ngFor="let product of products">
+      <img [src]="product.image" alt="{{ product.nombre }}">
+      <h2>{{ product.nombre }}</h2>
+      <div class="precio">${{ product.precio }}</div>
+      <div>
+        <button (click)="addToCart(product)">Agregar</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,147 @@
+.menuAdmin {
+  width: 300px;
+  max-width: 100%;
+  background: linear-gradient(180deg, rgb(75, 23, 124), rgb(30, 11, 61)) !important;
+  color: #eee;
+  position: fixed;
+  top: 90px;
+  left: -250px;
+  bottom: 0;
+  display: grid;
+  grid-template-rows: 70px 1fr 70px;
+  transition: left 0.5s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-close-menu {
+  position: absolute;
+  top: 10px;
+  right: -19px;
+  background: #97049c;
+  border: none;
+  color: #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.5s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-close-menu:hover {
+  background-color: #c54cc8;
+  transform: rotate(90deg);
+}
+
+body.showAdmin .menuAdmin {
+  left: 0;
+}
+
+body.showAdmin .container {
+  transform: translateX(250px);
+}
+
+.menuAdmin .menu h1 {
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+}
+
+.menuAdmin .menu ul {
+  list-style-type: none;
+  padding: 10;
+  margin-top: 20%;
+}
+
+.menuAdmin .menu ul li {
+  margin: 20px 0;
+}
+
+.menuAdmin .menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.menuAdmin .menu ul li a i {
+  transition: transform 0.5s, margin 0.5s;
+}
+
+body:not(.showAdmin) .menuAdmin .menu ul li a i {
+  margin-left: 15px;
+}
+
+body.showAdmin .menuAdmin .menu ul li a i {
+  margin-left: 0;
+}
+
+.menuAdmin .menu ul li a i {
+  margin-right: 15px;
+}
+
+.menuAdmin .menu ul li a:hover {
+  background-color: #c501b8;
+}
+
+@media (max-width: 768px) {
+  .menuAdmin {
+    width: 200px;
+  }
+
+  .menuAdmin .menu h1 {
+    font-size: 20px;
+  }
+
+  .menuAdmin .menu ul li a {
+    font-size: 16px;
+  }
+
+  body.showAdmin .container {
+    transform: translateX(200px);
+  }
+}
+
+@media (max-width: 576px) {
+  .menuAdmin {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .menuAdmin .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .menuAdmin .menu ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .menuAdmin .menu ul li {
+    margin: 5px 0;
+  }
+
+  body.showAdmin .container {
+    transform: translateX(0);
+  }
+}
+
+.modal {
+  z-index: 1050;
+}
+
+.modal-backdrop {
+  z-index: 1040;
+}

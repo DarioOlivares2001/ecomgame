@@ -1,0 +1,76 @@
+<div class="container" style="margin-top: 150px;">
+  <div class="d-flex align-items-center justify-content-lg-center vh-100" style="margin-top: -100px;">
+    <div class="card shadow-sm p-4" style="width: 20rem;">
+      <div class="card-body">
+        <h5 class="card-title text-center mb-4">Registro</h5>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <div class="form-group mb-3">
+            <label for="username">Usuario</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="username" formControlName="username" autocomplete="username">
+            </div>
+            <div class="text-danger" *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched">
+              El nombre de usuario es obligatorio.
+            </div>
+          </div>
+          <div class="form-group mb-3">
+            <label for="email">Correo</label>
+            <div class="input-group">
+              <input type="email" class="form-control" id="email" formControlName="email" autocomplete="email">
+            </div>
+            <div class="text-danger" *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+              <div *ngIf="registerForm.get('email')?.errors?.['required']">El correo electrónico es obligatorio.</div>
+              <div *ngIf="registerForm.get('email')?.errors?.['email']">Formato de correo electrónico no válido.</div>
+            </div>
+          </div>
+          <div class="form-group mb-3">
+            <label for="password">Password</label>
+            <div class="input-group">
+              <input type="password" class="form-control" id="password" formControlName="password" autocomplete="new-password">
+            </div>
+            <div class="text-danger" *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+              <div *ngIf="registerForm.get('password')?.errors?.['required']">La contraseña es obligatoria.</div>
+              <div *ngIf="registerForm.get('password')?.errors?.['minlength']">La contraseña debe tener al menos 6 caracteres.</div>
+              <div *ngIf="registerForm.get('password')?.errors?.['pattern']">La contraseña debe contener al menos una letra mayúscula y un número.</div>
+            </div>
+          </div>
+          <div class="form-group mb-3">
+            <label for="confirmPassword">Confirmar Password</label>
+            <div class="input-group">
+              <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword" autocomplete="new-password">
+            </div>
+            <div class="text-danger" *ngIf="registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched">
+              <div *ngIf="registerForm.get('confirmPassword')?.errors?.['required']">Confirmar la contraseña es obligatorio.</div>
+              <div *ngIf="registerForm.errors?.['passwordMismatch']">Las contraseñas no coinciden.</div>
+            </div>
+          </div>
+          <div class="form-group mb-3">
+            <label for="birthdate">Fecha Nacimiento</label>
+            <div class="input-group">
+              <input type="date" class="form-control" id="birthdate" formControlName="birthdate" autocomplete="bdate">
+            </div>
+            <div class="text-danger" *ngIf="registerForm.get('birthdate')?.invalid && registerForm.get('birthdate')?.touched">
+              <div *ngIf="registerForm.get('birthdate')?.errors?.['required']">La fecha de nacimiento es obligatoria.</div>
+              <div *ngIf="registerForm.errors?.['ageRequirement']">Debe tener al menos 13 años para registrarse.</div>
+            </div>
+          </div>
+          <div class="form-group mb-3">
+            <label for="address">Direccion (optional)</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+              </div>
+              <input type="text" class="form-control" id="address" formControlName="address">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary w-100" [disabled]="registerForm.invalid">Registrar</button>
+        </form>
+        <div class="mt-3 text-center">
+          <p>¿Ya tienes una cuenta? <a routerLink="/login-component">Iniciar sesión</a></p>
+        </div>
+        <div *ngIf="registrationSuccess" class="alert alert-success mt-3">
+          Registro exitoso. Por favor, inicie sesión.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

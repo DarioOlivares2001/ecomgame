@@ -1,0 +1,33 @@
+.notification-banner {
+  background: linear-gradient(to right, #b3c2ec, #f8f8f8 50%, #dae4f7);
+  color: #1d1c1d;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  position: fixed;
+  top: 72px;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.notification-banner i {
+  margin-right: 8px;
+  font-size: 16px;
+  color: #ca0571;
+}
+
+
+.notification-banner .highlight {
+  color: #be00be;
+}
+
+
+@media (max-width: 992px) {
+  .notification-banner {
+    display: none;
+  }
+}

@@ -1,0 +1,38 @@
+<div class="container mt-5" style="margin-top: 300px; margin-bottom: 200px;">
+  <h1 class="text-center">Factura</h1>
+  <div class="text-center">
+    <h5><strong>Número de Orden de Venta (OV):</strong> {{ orderNumber }}</h5>
+    <h5><strong>Número de Factura:</strong> {{ invoiceNumber }}</h5>
+  </div>
+  <div id="usuario-info" class="mt-4">
+    <h3>Información del Usuario</h3>
+    <p><strong>Nombre:</strong> {{ userInfo.nombre }}</p>
+    <p><strong>Email:</strong> {{ userInfo.email }}</p>
+    <p><strong>Dirección:</strong> {{ userInfo.direccion }}</p>
+  </div>
+  <div id="factura-detalle" class="mt-4">
+    <h3>Detalle de la Compra</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Precio Unitario</th>
+          <th>Precio Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items">
+          <td>{{ item.nombre }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.precio }}</td>
+          <td>{{ item.precio * item.quantity }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <h4 class="text-end">Total: ${{ total }}</h4>
+  </div>
+  <div class="text-center mt-5">
+    <h2 class="text-success">¡Compra Exitosa!</h2>
+  </div>
+</div>

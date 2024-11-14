@@ -1,0 +1,22 @@
+<div class="overSuperlay" (click)="closeCart()"></div>
+<div class="carrito">
+  <h1>Carrito</h1>
+  <div class="listarCarro">
+    <div class="item" *ngFor="let item of items">
+      <img [src]="item.image" alt="{{ item.nombre }}">
+      <div class="cantidad">{{ item.nombre}}</div>
+      <div class="precioTotal">${{ item.precio * item.quantity }}</div>
+      <div class="cantidad">
+        <span class="menos" (click)="changeQuantity(item.id, 'menos')">-</span>
+        <span>{{ item.quantity }}</span>
+        <span class="mas" (click)="changeQuantity(item.id, 'mas')">+</span>
+      </div>
+    </div>
+  </div>
+
+  <h1 class="total">Total : {{ total | currency }}</h1>
+  <div class="btn">
+    <button class="cerrar" (click)="closeCart()">Cerrar</button>
+    <button class="pagar" (click)="pay()">Pagar</button>
+  </div>
+</div>

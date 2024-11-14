@@ -5,7 +5,7 @@ WORKDIR /app
 #jkhdsakjhfd
 COPY package*.json ./
 #jkhdsakjhfd
-RUN npm ci
+RUN npm install --production
 #jkhdsakjhfd
 COPY . .
 #jkhdsakjhfd

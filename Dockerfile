@@ -1,5 +1,5 @@
 # Etapa de construcción usando Node.js v18.20.5
-FROM node:18.20.5 AS build
+FROM node:18 AS build
 
 # Establecer el directorio de trabajo dentro del contenedor
 WORKDIR /app
